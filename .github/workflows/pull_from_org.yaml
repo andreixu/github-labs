@@ -18,7 +18,7 @@ jobs:
         id: prerequisites
         shell: bash
         run: |
-          echo "##Prerequisites 📋" >> $GITHUB_STEP_SUMMARY
+          echo "## Prerequisites 📋" >> $GITHUB_STEP_SUMMARY
           if [[ -f ./prerequisites.sh && -x ./prerequisites.sh ]]; then
             echo "▶️ Prerequisites script found. Execution logs bellow:" >> $GITHUB_STEP_SUMMARY
             ./prerequisites.sh
