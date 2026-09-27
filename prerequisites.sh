@@ -7,8 +7,8 @@ if [[ -z "$REPO_ORG" || -z "$REPO_NAME" ]]; then
 fi
 echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
 git clone https://github.com/$REPO_ORG/$REPO_NAME.git >> $GITHUB_STEP_SUMMARY 2>&1
+echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
 if [[ $? -ne 0 ]]; then
   echo "**<span style="color:red">ERROR:</span>** Failed to clone the repository." >> $GITHUB_STEP_SUMMARY
   exit 1
 fi
-echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
