@@ -1,0 +1,27 @@
+name: Pull from org/repo
+on:
+  workflow_dispatch:
+
+jobs:
+  pull-same-org-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Summary message
+        id: summary-message
+        shell: bash
+        run: |
+          echo "###Pull from Repo from same org Demo" >> $GITHUB_SUMMARY
+      - name: Pull current repo
+        id: pull-repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - name: Check for prerequisites
+        id: prerequisites
+        shell: bash
+        run: |
+          echo "##Prerequisites 📋"
+          if [[ -f ./prerequisites.sh && -x ./prerequisites.sh ]]; then
+            echo "▶️ Prerequisites script found. Execution logs bellow:" >> $GITHUB_SUMMARY
+            ./prerequisites.sh
+          else
+            echo "⏹️ No prerequisites found."
+          fi
