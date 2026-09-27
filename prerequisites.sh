@@ -10,6 +10,7 @@ git clone https://github.com/$REPO_ORG/$REPO_NAME.git >> $GITHUB_STEP_SUMMARY 2>
 if [[ $? -ne 0 ]]; then
   git_clone_exit_code=$?
 echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+echo "Git clone exit code: $git_clone_exit_code" >> $GITHUB_STEP_SUMMARY
 if [[ $git_clone_exit_code -ne 0 ]]; then
   echo "**<span style="color:red">ERROR:</span>** Failed to clone the repository." >> $GITHUB_STEP_SUMMARY
   exit 1
