@@ -6,6 +6,6 @@ if [[ -z "$REPO_ORG" || -z "$REPO_NAME" ]]; then
   echo "**<span style="color:red">ERROR:</span>** REPO_ORG and REPO_NAME environment variables must be set." >> $GITHUB_STEP_SUMMARY
   exit 1
 fi
-echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-git clone https://github.com/$REPO_ORG/$REPO_NAME.git >> $GITHUB_STEP_SUMMARY 2>&1
-echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+# echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+# git clone https://github.com/$REPO_ORG/$REPO_NAME.git >> $GITHUB_STEP_SUMMARY 2>&1
+# echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
