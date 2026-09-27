@@ -1,6 +1,15 @@
 name: Prerequisites with pull
 on:
   workflow_dispatch:
+    inputs:
+      REPO_ORG:
+        description: 'Organization of the repo to pull'
+        required: true
+        default: 'andreixu'
+      REPO_NAME:
+        description: 'Name of the repo to pull'
+        required: true
+        default: 'updater'
 
 jobs:
   pull-same-org-repo:
