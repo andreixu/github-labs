@@ -32,7 +32,7 @@ jobs:
         env:
           REPO_ORG: ${{ github.event.inputs.REPO_ORG }}
           REPO_NAME: ${{ github.event.inputs.REPO_NAME }}
-          GH_TOKEN: ${{ secrets.TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           echo "### Prerequisites 📋  " >> $GITHUB_STEP_SUMMARY
           if [[ -f ./prerequisites.sh && -x ./prerequisites.sh ]]; then
