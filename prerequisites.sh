@@ -6,9 +6,8 @@ if [[ -z "$REPO_ORG" || -z "$REPO_NAME" ]]; then
   exit 1
 fi
 echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-git clone https://github.com/$REPO_ORG/$REPO_NAME.git >> $GITHUB_STEP_SUMMARY 2>&1
+gh repo clone https://github.com/$REPO_ORG/$REPO_NAME.git >> $GITHUB_STEP_SUMMARY 2>&1
 git_clone_exit_code=$?
-echo "Git clone exit code: $git_clone_exit_code" >> $GITHUB_STEP_SUMMARY
 echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
 if [[ $git_clone_exit_code -ne 0 ]]; then
   echo -n "\$\${\\color{red}ERROR:}\$\$" >> $GITHUB_STEP_SUMMARY
